@@ -1,4 +1,4 @@
 JZWGesturePassword
 ==================
 
-GesturePassword for ios
+GesturePassword for ios. It has concise interface
