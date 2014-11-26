@@ -26,9 +26,9 @@ static const NSUInteger kCircleNum = 9;
 -(instancetype)initWithLength:(CGFloat)length{
   if (self = [super initWithFrame:CGRectMake(0, 0, length, length)]) {
     _radius = length / 10;
+    [self p_initSubViewsWithLength:length];
     _lineView = [[JZWLineView alloc] initWithFrame:CGRectMake(0, 0, length, length)];
     [self addSubview:_lineView];
-    [self p_initSubViewsWithLength:length];
     [self p_addGestureRecognizer];
     _selectedCircles = [NSMutableArray array];
   }
@@ -69,7 +69,7 @@ static const NSUInteger kCircleNum = 9;
     if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
       [self p_handleTouchPointWhenTap:point];
     }else{
-      [self p_handleFinishTap];
+      [self p_handleFinishTapWithPoint:point];
     }
   }
   
@@ -108,9 +108,24 @@ static const NSUInteger kCircleNum = 9;
   [_lineView drawSelectedCircles:_selectedCircles];
 }
 
--(void)p_handleFinishTap{
-  NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
-  [_deleagte JZWGestureViewDidFinishWithNumber:number];
+-(void)p_handleFinishTapWithPoint:(CGPoint)point{
+  for (JZWCircle* circle in _circleViewArray) {
+    CGPoint pointInCircle = [self convertPoint:point toView:circle];
+    BOOL isCircleHit = [circle pointInside:pointInCircle withEvent:nil];
+    
+    if (isCircleHit && !_canSelectTwice) {
+      NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
+      [_deleagte JZWGestureViewDidFinishWithNumber:number];
+    }else{
+      JZWCircle* lastSelectCricle = [_selectedCircles lastObject];
+      if (lastSelectCricle) {
+        JZWLine* line = [[JZWLine alloc] initWithFromX:lastSelectCricle.center.x FromY:lastSelectCricle.center.y ToX:point.x ToY:point.y];
+        [self p_handleDrawLinesWithSelectedCircles:_selectedCircles andLine:line];
+      }
+    }
+  }
+  
+
 }
 
 @end
