@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B22881A3-99E9-498E-9A2E-B61DE719A599</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JZWGesturePass</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1858A7E9AAF3D319805ADA0D4552D17688B7D22A</key>
+		<string>https://github.com/jimmyzywang/JZWGesturePassword.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JZWGesturePass/JZWGesturePass.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1858A7E9AAF3D319805ADA0D4552D17688B7D22A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jimmyzywang/JZWGesturePassword.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1858A7E9AAF3D319805ADA0D4552D17688B7D22A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1858A7E9AAF3D319805ADA0D4552D17688B7D22A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JZWGesturePassword</string>
+		</dict>
+	</array>
+</dict>
+</plist>
