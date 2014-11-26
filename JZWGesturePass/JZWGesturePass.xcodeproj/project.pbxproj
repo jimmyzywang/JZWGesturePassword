@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		DFF4C99F1A256961001B3CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C99E1A256961001B3CC6 /* main.m */; };
-		DFF4C9A21A256961001B3CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9A11A256961001B3CC6 /* AppDelegate.m */; };
-		DFF4C9A51A256961001B3CC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9A41A256961001B3CC6 /* ViewController.m */; };
 		DFF4C9A81A256961001B3CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C9A61A256961001B3CC6 /* Main.storyboard */; };
 		DFF4C9AA1A256961001B3CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C9A91A256961001B3CC6 /* Images.xcassets */; };
 		DFF4C9AD1A256961001B3CC6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C9AB1A256961001B3CC6 /* LaunchScreen.xib */; };
 		DFF4C9B91A256961001B3CC6 /* JZWGesturePassTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9B81A256961001B3CC6 /* JZWGesturePassTests.m */; };
+		DFF4C9C81A256B96001B3CC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9C51A256B96001B3CC6 /* AppDelegate.m */; };
+		DFF4C9C91A256B96001B3CC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9C71A256B96001B3CC6 /* ViewController.m */; };
+		DFF4C9D41A256BC5001B3CC6 /* JZWCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9CB1A256BC5001B3CC6 /* JZWCircle.m */; };
+		DFF4C9D51A256BC5001B3CC6 /* JZWGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9CD1A256BC5001B3CC6 /* JZWGestureView.m */; };
+		DFF4C9D61A256BC5001B3CC6 /* JZWLine.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9CF1A256BC5001B3CC6 /* JZWLine.m */; };
+		DFF4C9D71A256BC5001B3CC6 /* JZWLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9D11A256BC5001B3CC6 /* JZWLineView.m */; };
+		DFF4C9D81A256BC5001B3CC6 /* JZWUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C9D31A256BC5001B3CC6 /* JZWUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,16 +35,26 @@
 		DFF4C9991A256961001B3CC6 /* JZWGesturePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZWGesturePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF4C99D1A256961001B3CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF4C99E1A256961001B3CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DFF4C9A01A256961001B3CC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		DFF4C9A11A256961001B3CC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DFF4C9A31A256961001B3CC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DFF4C9A41A256961001B3CC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DFF4C9A71A256961001B3CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DFF4C9A91A256961001B3CC6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DFF4C9AC1A256961001B3CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DFF4C9B21A256961001B3CC6 /* JZWGesturePassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JZWGesturePassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF4C9B71A256961001B3CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF4C9B81A256961001B3CC6 /* JZWGesturePassTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZWGesturePassTests.m; sourceTree = "<group>"; };
+		DFF4C9C41A256B96001B3CC6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TestUI/AppDelegate.h; sourceTree = "<group>"; };
+		DFF4C9C51A256B96001B3CC6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = TestUI/AppDelegate.m; sourceTree = "<group>"; };
+		DFF4C9C61A256B96001B3CC6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = TestUI/ViewController.h; sourceTree = "<group>"; };
+		DFF4C9C71A256B96001B3CC6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = TestUI/ViewController.m; sourceTree = "<group>"; };
+		DFF4C9CA1A256BC5001B3CC6 /* JZWCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZWCircle.h; path = JZWGesturePass/JZWCircle.h; sourceTree = "<group>"; };
+		DFF4C9CB1A256BC5001B3CC6 /* JZWCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZWCircle.m; path = JZWGesturePass/JZWCircle.m; sourceTree = "<group>"; };
+		DFF4C9CC1A256BC5001B3CC6 /* JZWGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZWGestureView.h; path = JZWGesturePass/JZWGestureView.h; sourceTree = "<group>"; };
+		DFF4C9CD1A256BC5001B3CC6 /* JZWGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZWGestureView.m; path = JZWGesturePass/JZWGestureView.m; sourceTree = "<group>"; };
+		DFF4C9CE1A256BC5001B3CC6 /* JZWLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZWLine.h; path = JZWGesturePass/JZWLine.h; sourceTree = "<group>"; };
+		DFF4C9CF1A256BC5001B3CC6 /* JZWLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZWLine.m; path = JZWGesturePass/JZWLine.m; sourceTree = "<group>"; };
+		DFF4C9D01A256BC5001B3CC6 /* JZWLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZWLineView.h; path = JZWGesturePass/JZWLineView.h; sourceTree = "<group>"; };
+		DFF4C9D11A256BC5001B3CC6 /* JZWLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZWLineView.m; path = JZWGesturePass/JZWLineView.m; sourceTree = "<group>"; };
+		DFF4C9D21A256BC5001B3CC6 /* JZWUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JZWUtils.h; path = JZWGesturePass/JZWUtils.h; sourceTree = "<group>"; };
+		DFF4C9D31A256BC5001B3CC6 /* JZWUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JZWUtils.m; path = JZWGesturePass/JZWUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +96,8 @@
 		DFF4C99B1A256961001B3CC6 /* JZWGesturePass */ = {
 			isa = PBXGroup;
 			children = (
-				DFF4C9A01A256961001B3CC6 /* AppDelegate.h */,
-				DFF4C9A11A256961001B3CC6 /* AppDelegate.m */,
-				DFF4C9A31A256961001B3CC6 /* ViewController.h */,
-				DFF4C9A41A256961001B3CC6 /* ViewController.m */,
+				DFF4C9C31A256A78001B3CC6 /* TestUI */,
+				DFF4C9C21A256A5A001B3CC6 /* JZWGesturePass */,
 				DFF4C9A61A256961001B3CC6 /* Main.storyboard */,
 				DFF4C9A91A256961001B3CC6 /* Images.xcassets */,
 				DFF4C9AB1A256961001B3CC6 /* LaunchScreen.xib */,
@@ -117,6 +130,34 @@
 				DFF4C9B71A256961001B3CC6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DFF4C9C21A256A5A001B3CC6 /* JZWGesturePass */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C9CA1A256BC5001B3CC6 /* JZWCircle.h */,
+				DFF4C9CB1A256BC5001B3CC6 /* JZWCircle.m */,
+				DFF4C9CC1A256BC5001B3CC6 /* JZWGestureView.h */,
+				DFF4C9CD1A256BC5001B3CC6 /* JZWGestureView.m */,
+				DFF4C9CE1A256BC5001B3CC6 /* JZWLine.h */,
+				DFF4C9CF1A256BC5001B3CC6 /* JZWLine.m */,
+				DFF4C9D01A256BC5001B3CC6 /* JZWLineView.h */,
+				DFF4C9D11A256BC5001B3CC6 /* JZWLineView.m */,
+				DFF4C9D21A256BC5001B3CC6 /* JZWUtils.h */,
+				DFF4C9D31A256BC5001B3CC6 /* JZWUtils.m */,
+			);
+			name = JZWGesturePass;
+			sourceTree = "<group>";
+		};
+		DFF4C9C31A256A78001B3CC6 /* TestUI */ = {
+			isa = PBXGroup;
+			children = (
+				DFF4C9C41A256B96001B3CC6 /* AppDelegate.h */,
+				DFF4C9C51A256B96001B3CC6 /* AppDelegate.m */,
+				DFF4C9C61A256B96001B3CC6 /* ViewController.h */,
+				DFF4C9C71A256B96001B3CC6 /* ViewController.m */,
+			);
+			name = TestUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +260,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF4C9A51A256961001B3CC6 /* ViewController.m in Sources */,
-				DFF4C9A21A256961001B3CC6 /* AppDelegate.m in Sources */,
+				DFF4C9C91A256B96001B3CC6 /* ViewController.m in Sources */,
+				DFF4C9D81A256BC5001B3CC6 /* JZWUtils.m in Sources */,
+				DFF4C9D71A256BC5001B3CC6 /* JZWLineView.m in Sources */,
+				DFF4C9D61A256BC5001B3CC6 /* JZWLine.m in Sources */,
+				DFF4C9C81A256B96001B3CC6 /* AppDelegate.m in Sources */,
+				DFF4C9D51A256BC5001B3CC6 /* JZWGestureView.m in Sources */,
 				DFF4C99F1A256961001B3CC6 /* main.m in Sources */,
+				DFF4C9D41A256BC5001B3CC6 /* JZWCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
