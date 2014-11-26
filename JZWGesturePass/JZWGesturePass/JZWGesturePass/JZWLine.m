@@ -10,4 +10,14 @@
 
 @implementation JZWLine
 
+-(instancetype)initWithFromX:(CGFloat)fromX FromY:(CGFloat)fromY ToX:(CGFloat)toX ToY:(CGFloat)toY{
+  if (self = [super init]) {
+    _fromX = fromX;
+    _fromY = fromY;
+    _toX = toX;
+    _toY = toY;
+  }
+  return self;
+}
+
 @end

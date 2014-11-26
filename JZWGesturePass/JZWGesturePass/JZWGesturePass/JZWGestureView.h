@@ -15,13 +15,6 @@
 @end
 
 @interface JZWGestureView : UIView
-/**
- *  init method
- *
- *  @param length the length of one side
- *
- *  @return instance of JZWGestureView
- */
 -(instancetype)initWithLength:(CGFloat)length;
 @property(nonatomic,weak)id<JZWGestureViewDelegate> deleagte;
 @property(nonatomic,assign)BOOL canSelectTwice;

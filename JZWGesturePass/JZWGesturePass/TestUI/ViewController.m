@@ -7,21 +7,30 @@
 //
 
 #import "ViewController.h"
-
+#import "JZWGestureView.h"
+#import "JZWUtils.h"
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController{
+  JZWGestureView* _gestureView;
+}
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
+
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+-(void)viewWillLayoutSubviews{
+  [super viewWillLayoutSubviews];
+  if (!_gestureView) {
+    _gestureView = [[JZWGestureView alloc] initWithLength:self.view.bounds.size.width];
+    _gestureView.frame = CGRectSetY(_gestureView.frame, (self.view.bounds.size.height - _gestureView.bounds.size.height)/2);
+    [self.view addSubview:_gestureView];
+  }
+  
 }
+
 
 @end

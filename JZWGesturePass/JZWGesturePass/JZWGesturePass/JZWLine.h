@@ -11,8 +11,9 @@
 
 @interface JZWLine : NSObject
 
-@property(nonatomic,assign)CGFloat fromX;
-@property(nonatomic,assign)CGFloat fromY;
-@property(nonatomic,assign)CGFloat toX;
-@property(nonatomic,assign)CGFloat toY;
+-(instancetype)initWithFromX:(CGFloat)fromX FromY:(CGFloat)fromY ToX:(CGFloat)toX ToY:(CGFloat)toY;
+@property(nonatomic,readonly)CGFloat fromX;
+@property(nonatomic,readonly)CGFloat fromY;
+@property(nonatomic,readonly)CGFloat toX;
+@property(nonatomic,readonly)CGFloat toY;
 @end

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @class JZWCircle;
+@class JZWLine;
 @interface JZWLineView : UIView
--(void)setCirclesToDraw:(NSArray*)circles;
+-(void)drawSelectedCircles:(NSArray*)circles;
 -(void)drawErrorLine;
+-(void)drawSelectedCircles:(NSArray *)circles andLine:(JZWLine*)line;
 @end

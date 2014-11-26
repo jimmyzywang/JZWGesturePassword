@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  ViewController* mainViewCtrl = [[ViewController alloc] init];
+  [UIApplication sharedApplication].keyWindow.rootViewController = mainViewCtrl;
+  [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
   // Override point for customization after application launch.
   return YES;
 }

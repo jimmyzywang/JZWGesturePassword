@@ -10,6 +10,7 @@
 #import "JZWCircle.h"
 #import "JZWUtils.h"
 #import "JZWLineView.h"
+#import "JZWLine.h"
 
 static const NSUInteger kCircleNum = 9;
 
@@ -78,14 +79,24 @@ static const NSUInteger kCircleNum = 9;
 }
 
 -(void)p_handleTouchPointWhenTap:(CGPoint)point{
-  
   for (JZWCircle* circle in _circleViewArray) {
     CGPoint pointInCircle = [self convertPoint:point toView:circle];
-    BOOL isCellHit = [circle pointInside:pointInCircle withEvent:nil];
-    if (isCellHit && !_canSelectTwice) {
+    BOOL isCircleHit = [circle pointInside:pointInCircle withEvent:nil];
+    
+    if (isCircleHit && !_canSelectTwice) {
       [self p_handleSelectCircle:circle];
+    }else{
+      JZWCircle* lastSelectCricle = [_selectedCircles lastObject];
+      if (lastSelectCricle) {
+        JZWLine* line = [[JZWLine alloc] initWithFromX:lastSelectCricle.center.x FromY:lastSelectCricle.center.y ToX:point.x ToY:point.y];
+        [self p_handleDrawLinesWithSelectedCircles:_selectedCircles andLine:line];
+      }
     }
   }
+}
+
+-(void)p_handleDrawLinesWithSelectedCircles:(NSArray*)selectedCircles andLine:(JZWLine*)line{
+  [_lineView drawSelectedCircles:_selectedCircles andLine:line];
 }
 
 -(void)p_handleSelectCircle:(JZWCircle*)circle{
@@ -94,7 +105,7 @@ static const NSUInteger kCircleNum = 9;
   if (![_selectedCircles containsObject:circle]) {
     [_selectedCircles addObject:circle];
   }
-  [_lineView setCirclesToDraw:_selectedCircles];
+  [_lineView drawSelectedCircles:_selectedCircles];
 }
 
 -(void)p_handleFinishTap{

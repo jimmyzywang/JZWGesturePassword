@@ -25,15 +25,15 @@ static const CGFloat kLineWidth = 1;
   return self;
 }
 
--(void)setCirclesToDraw:(NSArray *)circles{
+-(void)drawSelectedCircles:(NSArray *)circles{
   _circleToDraw = [circles copy];
-  _lines = [NSMutableArray array];
-  [self p_computeLines];
+  _lines = [self p_computeLinesBetweenSelectedCircles:circles];
   [self setNeedsDisplay];
 }
 
 -(void)drawErrorLine{
   _isError = YES;
+  _lines = [self p_computeLinesBetweenSelectedCircles:_circleToDraw];
   [self setNeedsDisplay];
 }
 
@@ -54,21 +54,26 @@ static const CGFloat kLineWidth = 1;
   }
 }
 
--(void)p_computeLines{
-  for (NSInteger index = 0; index < [_circleToDraw count]; index++) {
-    JZWCircle* currentCircle = [_circleToDraw objectAtIndex:index];
-    if (index != [_circleToDraw count] - 1) {
-      JZWCircle* nextCircle = [_circleToDraw objectAtIndex:index + 1];
-      JZWLine* line = [[JZWLine alloc] init];
-      line.fromX = currentCircle.center.x;
-      line.fromY = currentCircle.center.y;
-      line.toX = nextCircle.center.x;
-      line.toY = nextCircle.center.y;
-      [_lines addObject:line];
+-(NSMutableArray*)p_computeLinesBetweenSelectedCircles:(NSArray*)selectedCircles{
+  NSMutableArray* lines = [NSMutableArray array];
+  for (NSInteger index = 0; index < [selectedCircles count]; index++) {
+    JZWCircle* currentCircle = [selectedCircles objectAtIndex:index];
+    if (index != [selectedCircles count] - 1) {
+      JZWCircle* nextCircle = [selectedCircles objectAtIndex:index + 1];
+      JZWLine* line = [[JZWLine alloc] initWithFromX:currentCircle.center.x FromY:currentCircle.center.y ToX:nextCircle.center.x ToY:nextCircle.center.y];
+      [lines addObject:line];
     }else{
       break;
     }
   }
+  return lines;
+}
+
+-(void)drawSelectedCircles:(NSArray *)circles andLine:(JZWLine *)line{
+  _circleToDraw = [circles copy];
+  _lines = [self p_computeLinesBetweenSelectedCircles:circles];
+  [_lines addObject:line];
+  [self setNeedsDisplay];
 }
 
 @end
