@@ -14,4 +14,5 @@
 -(void)drawSelectedCircles:(NSArray*)circles;
 -(void)drawErrorLine;
 -(void)drawSelectedCircles:(NSArray *)circles andLine:(JZWLine*)line;
+-(void)reset;
 @end

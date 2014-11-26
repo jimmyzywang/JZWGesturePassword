@@ -18,8 +18,6 @@ static const NSUInteger kCircleNum = 9;
   NSArray* _circleViewArray;
   CGFloat _radius;
   NSMutableArray* _selectedCircles;
-  NSMutableArray* _linesArray;
-  JZWCircle* _lastCirle;
   JZWLineView* _lineView;
 }
 
@@ -64,11 +62,12 @@ static const NSUInteger kCircleNum = 9;
 
 -(void)p_onGesture:(UIGestureRecognizer*)gestureRecognizer{
   CGPoint point = [gestureRecognizer locationInView:self];
-  
   if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
+    if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
       [self p_handleTouchPointWhenTap:point];
-    }else{
+    }
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
       [self p_handleFinishTapWithPoint:point];
     }
   }
@@ -101,7 +100,6 @@ static const NSUInteger kCircleNum = 9;
 
 -(void)p_handleSelectCircle:(JZWCircle*)circle{
   [circle setSelected];
-  _lastCirle = circle;
   if (![_selectedCircles containsObject:circle]) {
     [_selectedCircles addObject:circle];
   }
@@ -115,17 +113,19 @@ static const NSUInteger kCircleNum = 9;
     
     if (isCircleHit && !_canSelectTwice) {
       NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
+      [_lineView drawSelectedCircles:_selectedCircles];
       [_deleagte JZWGestureViewDidFinishWithNumber:number];
-    }else{
-      JZWCircle* lastSelectCricle = [_selectedCircles lastObject];
-      if (lastSelectCricle) {
-        JZWLine* line = [[JZWLine alloc] initWithFromX:lastSelectCricle.center.x FromY:lastSelectCricle.center.y ToX:point.x ToY:point.y];
-        [self p_handleDrawLinesWithSelectedCircles:_selectedCircles andLine:line];
-      }
+      dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self p_reset];
+      });
+      break;
     }
   }
-  
+}
 
+-(void)p_reset{
+  [_lineView reset];
+  [_circleViewArray makeObjectsPerformSelector:@selector(reset)];
 }
 
 @end

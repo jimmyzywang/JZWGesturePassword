@@ -27,4 +27,5 @@ typedef NS_ENUM(NSInteger, JZWCircleState){
 -(instancetype)initWithRadius:(CGFloat)radius withPostion:(NSInteger)pos;
 -(NSInteger)pos;
 -(void)setSelected;
+-(void)reset;
 @end

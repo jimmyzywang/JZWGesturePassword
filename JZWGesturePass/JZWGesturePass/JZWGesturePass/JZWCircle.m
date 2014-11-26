@@ -69,6 +69,11 @@ static const CGFloat kNormalLineWidth = 1;
 }
 
 -(NSString*)description{
-  return [NSString stringWithFormat:@"%@, JZWCircle state = %ld pos = %ld",[super description],_state,_pos];
+  return [NSString stringWithFormat:@"%@, JZWCircle state = %d pos = %d",[super description],_state,_pos];
+}
+
+-(void)reset{
+  _state = JZWCircleStateNormal;
+  [self setNeedsDisplay];
 }
 @end
