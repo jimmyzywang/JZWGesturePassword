@@ -54,26 +54,18 @@ static const NSUInteger kCircleNum = 9;
 }
 
 -(void)p_addGestureRecognizer{
-  UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(p_onGesture:)];
   UIPanGestureRecognizer* pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(p_onGesture:)];
-  [self addGestureRecognizer:tap];
   [self addGestureRecognizer:pan];
 }
 
 -(void)p_onGesture:(UIGestureRecognizer*)gestureRecognizer{
   CGPoint point = [gestureRecognizer locationInView:self];
-  if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
-    if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
-      [self p_handleTouchPointWhenTap:point];
-    }
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
-      [self p_handleFinishTapWithPoint:point];
-    }
+  if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
+    [self p_handleTouchPointWhenTap:point];
   }
   
-  if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
-    
+  if (gestureRecognizer.state == UIGestureRecognizerStateEnded || gestureRecognizer.state == UIGestureRecognizerStateCancelled) {
+    [self p_handleFinishTapWithPoint:point];
   }
 }
 
@@ -115,17 +107,20 @@ static const NSUInteger kCircleNum = 9;
       NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
       [_lineView drawSelectedCircles:_selectedCircles];
       [_deleagte JZWGestureViewDidFinishWithNumber:number];
-      dispatch_after(dispatch_time(DISPATCH_TIME_NOW,(int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self p_reset];
-      });
       break;
     }
   }
 }
 
--(void)p_reset{
+-(void)reset{
   [_lineView reset];
   [_circleViewArray makeObjectsPerformSelector:@selector(reset)];
+  [_selectedCircles removeAllObjects];
+}
+
+-(void)drawError{
+  [_lineView drawErrorLine];
+  [_selectedCircles makeObjectsPerformSelector:@selector(drawError)];
 }
 
 @end

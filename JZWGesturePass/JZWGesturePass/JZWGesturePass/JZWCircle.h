@@ -28,4 +28,5 @@ typedef NS_ENUM(NSInteger, JZWCircleState){
 -(NSInteger)pos;
 -(void)setSelected;
 -(void)reset;
+-(void)drawError;
 @end

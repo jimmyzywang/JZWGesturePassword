@@ -18,4 +18,6 @@
 -(instancetype)initWithLength:(CGFloat)length;
 @property(nonatomic,weak)id<JZWGestureViewDelegate> deleagte;
 @property(nonatomic,assign)BOOL canSelectTwice;
+-(void)drawError;
+-(void)reset;
 @end

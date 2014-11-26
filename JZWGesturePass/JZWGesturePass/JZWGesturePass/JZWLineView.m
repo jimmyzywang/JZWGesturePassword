@@ -77,6 +77,7 @@ static const CGFloat kLineWidth = 1;
 }
 
 -(void)reset{
+  _isError = NO;
   [_lines removeAllObjects];
   [self setNeedsDisplay];
 }

@@ -76,4 +76,9 @@ static const CGFloat kNormalLineWidth = 1;
   _state = JZWCircleStateNormal;
   [self setNeedsDisplay];
 }
+
+-(void)drawError{
+  _state = JZWCircleStateError;
+  [self setNeedsDisplay];
+}
 @end
