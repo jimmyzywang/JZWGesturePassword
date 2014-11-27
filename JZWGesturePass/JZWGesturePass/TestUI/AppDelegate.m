@@ -17,10 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   ViewController* mainViewCtrl = [[ViewController alloc] init];
-  [UIApplication sharedApplication].keyWindow.rootViewController = mainViewCtrl;
-  [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
-  // Override point for customization after application launch.
+  UINavigationController* naviCtrl = [[UINavigationController alloc] initWithRootViewController:mainViewCtrl];
+  self.window.rootViewController = naviCtrl;
   return YES;
 }
 

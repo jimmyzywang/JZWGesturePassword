@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF47037F1A271B43001B88BC /* SetUpPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF47037E1A271B43001B88BC /* SetUpPasswordViewController.m */; };
+		DF4703821A271B5A001B88BC /* VerifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF4703811A271B5A001B88BC /* VerifyPasswordViewController.m */; };
 		DFF4C99F1A256961001B3CC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DFF4C99E1A256961001B3CC6 /* main.m */; };
 		DFF4C9A81A256961001B3CC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C9A61A256961001B3CC6 /* Main.storyboard */; };
 		DFF4C9AA1A256961001B3CC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF4C9A91A256961001B3CC6 /* Images.xcassets */; };
@@ -32,6 +34,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF47037D1A271B43001B88BC /* SetUpPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetUpPasswordViewController.h; path = TestUI/SetUpPasswordViewController.h; sourceTree = "<group>"; };
+		DF47037E1A271B43001B88BC /* SetUpPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetUpPasswordViewController.m; path = TestUI/SetUpPasswordViewController.m; sourceTree = "<group>"; };
+		DF4703801A271B5A001B88BC /* VerifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VerifyPasswordViewController.h; path = TestUI/VerifyPasswordViewController.h; sourceTree = "<group>"; };
+		DF4703811A271B5A001B88BC /* VerifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VerifyPasswordViewController.m; path = TestUI/VerifyPasswordViewController.m; sourceTree = "<group>"; };
+		DF4703831A271D48001B88BC /* JZWGesturePass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JZWGesturePass.h; path = JZWGesturePass/JZWGesturePass.h; sourceTree = "<group>"; };
 		DFF4C9991A256961001B3CC6 /* JZWGesturePass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JZWGesturePass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF4C99D1A256961001B3CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DFF4C99E1A256961001B3CC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -135,6 +142,7 @@
 		DFF4C9C21A256A5A001B3CC6 /* JZWGesturePass */ = {
 			isa = PBXGroup;
 			children = (
+				DF4703831A271D48001B88BC /* JZWGesturePass.h */,
 				DFF4C9CA1A256BC5001B3CC6 /* JZWCircle.h */,
 				DFF4C9CB1A256BC5001B3CC6 /* JZWCircle.m */,
 				DFF4C9CC1A256BC5001B3CC6 /* JZWGestureView.h */,
@@ -156,6 +164,10 @@
 				DFF4C9C51A256B96001B3CC6 /* AppDelegate.m */,
 				DFF4C9C61A256B96001B3CC6 /* ViewController.h */,
 				DFF4C9C71A256B96001B3CC6 /* ViewController.m */,
+				DF47037D1A271B43001B88BC /* SetUpPasswordViewController.h */,
+				DF47037E1A271B43001B88BC /* SetUpPasswordViewController.m */,
+				DF4703801A271B5A001B88BC /* VerifyPasswordViewController.h */,
+				DF4703811A271B5A001B88BC /* VerifyPasswordViewController.m */,
 			);
 			name = TestUI;
 			sourceTree = "<group>";
@@ -267,6 +279,8 @@
 				DFF4C9C81A256B96001B3CC6 /* AppDelegate.m in Sources */,
 				DFF4C9D51A256BC5001B3CC6 /* JZWGestureView.m in Sources */,
 				DFF4C99F1A256961001B3CC6 /* main.m in Sources */,
+				DF47037F1A271B43001B88BC /* SetUpPasswordViewController.m in Sources */,
+				DF4703821A271B5A001B88BC /* VerifyPasswordViewController.m in Sources */,
 				DFF4C9D41A256BC5001B3CC6 /* JZWCircle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,9 +405,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: DONG ZHAO (ULH6RG9TC8)";
 				INFOPLIST_FILE = JZWGesturePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A56968AB-F326-438C-A58E-2448F799ECD1";
 			};
 			name = Debug;
 		};
@@ -404,6 +420,7 @@
 				INFOPLIST_FILE = JZWGesturePass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "A56968AB-F326-438C-A58E-2448F799ECD1";
 			};
 			name = Release;
 		};
@@ -460,6 +477,7 @@
 				DFF4C9BE1A256961001B3CC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DFF4C9BF1A256961001B3CC6 /* Build configuration list for PBXNativeTarget "JZWGesturePassTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +486,7 @@
 				DFF4C9C11A256961001B3CC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

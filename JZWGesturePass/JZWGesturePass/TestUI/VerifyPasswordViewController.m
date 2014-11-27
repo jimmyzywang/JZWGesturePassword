@@ -1,22 +1,21 @@
 //
-//  ViewController.m
+//  VerifyPasswordViewController.m
 //  JZWGesturePass
 //
-//  Created by jimmyzywang-nb on 14/11/26.
+//  Created by jimmyzywang-nb on 14/11/27.
 //  Copyright (c) 2014年 com.JZWang.com. All rights reserved.
 //
-#import <Foundation/Foundation.h>
-#import "ViewController.h"
-#import "JZWGestureView.h"
-#import "JZWUtils.h"
+
+#import "VerifyPasswordViewController.h"
+#import "JZWGesturePass.h"
 
 static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
 
-@interface ViewController () <JZWGestureViewDelegate>
+@interface VerifyPasswordViewController () <JZWGestureViewDelegate>
 
 @end
 
-@implementation ViewController{
+@implementation VerifyPasswordViewController{
   JZWGestureView* _gestureView;
   UILabel* _hintLabel;
   UIButton* _showPasswordButton;
@@ -24,6 +23,7 @@ static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  self.view.backgroundColor = [UIColor whiteColor];
   _hintLabel = [[UILabel alloc] init];
   [self.view addSubview:_hintLabel];
   
@@ -38,7 +38,7 @@ static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
 -(void)viewWillLayoutSubviews{
   [super viewWillLayoutSubviews];
   if (!_gestureView) {
-    _gestureView = [[JZWGestureView alloc] initWithLength:self.view.bounds.size.width];
+    _gestureView = [[JZWGestureView alloc] initWithLength:MIN(self.view.bounds.size.width,self.view.bounds.size.height)];
     _gestureView.frame = CGRectSetY(_gestureView.frame, (self.view.bounds.size.height - _gestureView.bounds.size.height)/2);
     _gestureView.deleagte = self;
     [self.view addSubview:_gestureView];
@@ -53,21 +53,17 @@ static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-  if (![[NSUserDefaults standardUserDefaults] objectForKey:kGesturePasswordKey]) {
-    _hintLabel.text = @"please setup a new password!";
-  }else{
-    _hintLabel.text = @"please unlock the password";
-    [_showPasswordButton setHidden:NO];
-    [_showPasswordButton setTitle:@"hold here to show password" forState:UIControlStateNormal];
-    [_showPasswordButton addTarget:self action:@selector(p_onClickedShowPassword:) forControlEvents:UIControlEventTouchUpInside];
-  }
+  _hintLabel.text = @"please unlock the password";
+  [_showPasswordButton setHidden:NO];
+  [_showPasswordButton setTitle:@"hold here to show password" forState:UIControlStateNormal];
+  [_showPasswordButton addTarget:self action:@selector(p_onClickedShowPassword:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)JZWGestureViewDidFinishWithNumber:(NSNumber *)number{
   NSNumber* password = [[NSUserDefaults standardUserDefaults] objectForKey:kGesturePasswordKey];
   if (!password) {
-    _hintLabel.text = [NSString stringWithFormat:@"your password is %ld",[number longValue]];
-    [[NSUserDefaults standardUserDefaults] setObject:number forKey:kGesturePasswordKey];
+    _hintLabel.text = @"please set your password first";
+    [self.navigationController popViewControllerAnimated:YES];
   }else{
     if ([number isEqualToNumber:password]) {
       _hintLabel.text = @"success!";
@@ -91,6 +87,4 @@ static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
   NSNumber* password = [[NSUserDefaults standardUserDefaults] objectForKey:kGesturePasswordKey];
   [_showPasswordButton setTitle:[NSString stringWithFormat:@"%ld",[password longValue]] forState:UIControlStateHighlighted];
 }
-
-
 @end
