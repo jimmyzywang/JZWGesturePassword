@@ -103,13 +103,13 @@ static const NSUInteger kCircleNum = 9;
     CGPoint pointInCircle = [self convertPoint:point toView:circle];
     BOOL isCircleHit = [circle pointInside:pointInCircle withEvent:nil];
     
-    if (isCircleHit && !_canSelectTwice) {
-      NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
-      [_lineView drawSelectedCircles:_selectedCircles];
-      [_deleagte JZWGestureViewDidFinishWithNumber:number];
-      break;
+    if (isCircleHit && !_canSelectTwice && ![_selectedCircles containsObject:circle]) {
+      [_selectedCircles addObject:circle];
     }
   }
+  NSNumber* number = [[JZWUtils sharedInstance] numberForSelectedCells:_selectedCircles];
+  [_lineView drawSelectedCircles:_selectedCircles];
+  [_deleagte JZWGestureViewDidFinishWithNumber:number];
 }
 
 -(void)reset{

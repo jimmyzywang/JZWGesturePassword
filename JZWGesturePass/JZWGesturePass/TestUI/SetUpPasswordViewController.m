@@ -46,6 +46,9 @@ static NSString* const kGesturePasswordKey = @"kGesturePasswordKey";
   _hintLabel.text = [NSString stringWithFormat:@"your password is %ld",[number longValue]];
   [[NSUserDefaults standardUserDefaults] setObject:number forKey:kGesturePasswordKey];
   [self.view setNeedsLayout];
+  dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self.navigationController popViewControllerAnimated:YES];
+  });
 }
 
 @end
